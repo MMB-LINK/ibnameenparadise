@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBN AMEEN PARADISE TRAVELS AND TOURS NIGERIA LIMITED</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for professional icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Configure Tailwind to use Inter font and custom theme colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#1677FF', // A strong, professional blue
+                        'secondary-gold': '#FFD700', // Gold accent for premium/Hajj
+                        'light-bg': '#FAFBFD', // Updated to a warmer, less plain off-white
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Import the Inter font for a professional look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* Custom scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for the professional gradient background */
+        .gradient-background {
+            background: linear-gradient(135deg, #1677FF 0%, #1677FF 60%, #00BFFF 100%);
+        }
+        /* Subtle texture for light-bg sections to make them less plain */
+        .subtle-texture {
+            background-image: linear-gradient(to right, rgba(255,255,255,.3) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,.3) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        /* --- Moving Background Styles --- */
+        .animated-hero {
+            overflow: hidden; 
+            position: relative;
+        }
+        
+        /* Create the moving particle layer using a pseudo-element */
+        .animated-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Generate multiple faint white circles (particles) using radial-gradient */
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+                radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+                radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+            
+            /* Define the size of the repeating gradient pattern */
+            background-size: 800px 800px, 600px 600px, 1000px 1000px, 700px 700px, 900px 900px;
+            
+            /* Apply the animation */
+            animation: move-background 100s linear infinite;
+            opacity: 0.6;
+            z-index: 1; /* Place below the text content */
+        }
+        
+        /* Define the extremely slow diagonal movement for the particles */
+        @keyframes move-background {
+            from { background-position: 0 0; }
+            to { background-position: 800px 800px; }
+        }
+
+        /* CAROUSEL STYLES */
+        .carousel-container {
+            width: 100%;
+            transform: translateX(0%); /* Controlled by JS */
+        }
+        .carousel-item {
+            flex: 0 0 100%; /* Important: Makes each item take up exactly 100% of the container width */
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+    <!-- Navigation Bar (Sticky) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <a href="#home" class="text-2xl font-bold text-primary-blue hover:text-secondary-gold transition duration-300">
+                <span class="text-secondary-gold">IBN</span> AMEEN TRAVELS
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-primary-blue transition duration-300">About Us</a>
+                <a href="#services" class="text-gray-600 hover:text-primary-blue transition duration-300">Services</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-primary-blue transition duration-300">Reviews</a>
+                <a href="#leadership" class="text-gray-600 hover:text-primary-blue transition duration-300">Team</a>
+                <a href="#contact" class="text-white bg-primary-blue px-4 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition duration-300">Contact & Locations</a>
+            </nav>
+            <button id="menu-button" class="md:hidden text-gray-600">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#about" class="block px-4 py-3 text-gray-600 hover:bg-light-bg transition duration-300">About Us</a>
+            <a href="#services" class="block px-4 py-3 text-gray-600 hover:bg-light-bg transition duration-300">Services</a>
+            <a href="#testimonials" class="block px-4 py-3 text-gray-600 hover:bg-light-bg transition duration-300">Reviews</a>
+            <a href="#leadership" class="block px-4 py-3 text-gray-600 hover:bg-light-bg transition duration-300">Team</a>
+            <a href="#contact" class="block px-4 py-3 text-white bg-primary-blue hover:bg-opacity-90 transition duration-300">Contact & Locations</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative gradient-background animated-hero text-white pt-24 pb-32">
+            <!-- Ensure content is above the animated background layer (z-index: 10) -->
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
+                    Your Trusted Partner for Hajj, Umrah, and Global Journeys
+                </h1>
+                <p class="text-xl sm:text-2xl mb-8 font-light max-w-3xl mx-auto">
+                    IBN AMEEN PARADISE TRAVELS AND TOURS: Over 25 Years of Excellence and Seamless Service, Registered under CAC.
+                </p>
+                
+                <!-- Dynamic Image Carousel (Moving Pictures) -->
+                <div id="hero-carousel" class="relative w-full max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden">
+                    <div class="carousel-container flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1: Mecca (Sacred Journey) -->
+                        <div class="carousel-item">
+                            <!-- Image of the Holy Kaaba -->
+                            <img src="https://github.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/blob/main/The%20Holy%20Kaaba.jpg?raw=true" 
+                                 alt="The Holy Kaaba in Mecca, representing Hajj and Umrah" 
+                                 class="w-full h-auto object-cover" 
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x450/4B5563/FCD34D?text=Image+Load+Error';"
+                                 style="height: 450px; object-fit: cover;"> <!-- Added fixed height for visual consistency with placeholder -->
+                        </div>
+                        
+                        <!-- Slide 2: Qatar/Airplane (Ticketing) - UPDATED IMAGE HERE -->
+                        <div class="carousel-item">
+                            <!-- Updated with the global ticketing image -->
+                            <img src="https://github.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/blob/main/QATAR%20AND%20GLOBAL%20TICKETING.jpg?raw=true" 
+                                 alt="Professional representation of global ticketing and Qatar travel services" 
+                                 class="w-full h-auto object-cover" 
+                                 loading="lazy"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/800x450/EAB308/1F2937?text=Image+Load+Error';"
+                                 style="height: 450px; object-fit: cover;"> <!-- Added fixed height for visual consistency -->
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Indicators (Dots) -->
+                    <div id="carousel-dots" class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                        <!-- Dots will be populated by JavaScript -->
+                    </div>
+                </div>
+                <!-- END Dynamic Image Carousel -->
+            </div>
+        </section>
+
+        <!-- About Us / Credibility Section -->
+        <section id="about" class="py-16 sm:py-24 bg-light-bg subtle-texture">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">Why Choose IBN AMEEN?</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Credibility Card 1: Experience -->
+                    <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-secondary-gold">
+                        <i data-lucide="clock" class="w-8 h-8 text-secondary-gold mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">25+ Years of Trust</h3>
+                        <p class="text-gray-600">We possess a deep operational history spanning over 25 years, providing peace of mind through proven reliability.</p>
+                    </div>
+
+                    <!-- Credibility Card 2: Official Registration -->
+                    <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-primary-blue">
+                        <i data-lucide="badge-check" class="w-8 h-8 text-primary-blue mb-3"></i>
+                        <h3 class="text-xl font-semibold mb-2">Fully Registered & Certified</h3>
+                        <p class="text-gray-600">Officially registered under the CAC and proud members of IATA and NATOP. You can verify our standards anytime.</p>
+                    </div>
+
+                    <!-- Credibility Card 3: Specialized Expertise -->
+                    <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-secondary-gold">
+                        <i data-lucide="plane" class="w-8 h-8 text-secondary-gold mb-3"></i>
+                        <h3 class="text-semibold mb-2">Sacred & Global Travel</h3>
+                        <p class="text-gray-600">Our core strength is in seamless Hajj and Umrah services, complemented by expertise in Qatar and global ticketing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Revamped to use a 3-column grid for key services) -->
+        <section id="services" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-primary-blue">Our Best-In-Class Services for Seamless Journeys</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Card 1: Sacred Journey Packages (Hajj/Umrah) - PREMIUM FOCUS -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-secondary-gold hover:shadow-2xl transition duration-300">
+                        <div class="p-3 bg-secondary-gold/20 rounded-full w-fit mb-4">
+                            <i data-lucide="star-off" class="w-6 h-6 text-secondary-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Premium Sacred Journey (Hajj/Umrah)</h3>
+                        <p class="text-gray-700 text-sm">Experience the pilgrimage in comfort with exclusive accommodation near the Haram, dedicated private transport, and personalized religious guidance to maximize your worship.</p>
+                    </div>
+
+                    <!-- Card 2: Global Flight Management - EXECUTIVE FOCUS -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-primary-blue hover:shadow-2xl transition duration-300">
+                        <div class="p-3 bg-primary-blue/20 rounded-full w-fit mb-4">
+                            <i data-lucide="plane-takeoff" class="w-6 h-6 text-primary-blue"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Executive Global Ticketing & Logistics</h3>
+                        <p class="text-gray-700 text-sm">Access to premium fares, complex multi-city itineraries, and 24/7 flight monitoring. Specialists in corporate and leisure travel to Qatar and beyond, ensuring optimal routes.</p>
+                    </div>
+
+                    <!-- Card 3: Crucial Service: Visa & Documentation - STRESS-FREE FOCUS -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-secondary-gold hover:shadow-2xl transition duration-300">
+                        <div class="p-3 bg-secondary-gold/20 rounded-full w-fit mb-4">
+                            <i data-lucide="file-check" class="w-6 h-6 text-secondary-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Stress-Free Visa & Documentation</h3>
+                        <p class="text-gray-700 text-sm">Complete handling of visa applications (including Saudi Arabia and key destinations), securing necessary travel insurance, and passport renewal assistance. Guaranteed submission integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials/Trust Section (NEW SECTION) -->
+        <section id="testimonials" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">Pilgrims & Travelers Trust Us</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Testimonial 1: Hajj Focus -->
+                    <div class="bg-primary-blue/5 p-6 rounded-xl shadow-xl border-l-4 border-primary-blue">
+                        <i data-lucide="quote" class="w-6 h-6 text-primary-blue mb-3"></i>
+                        <p class="text-gray-700 italic mb-4">"The Hajj package provided by IBN AMEEN was flawless. The hotel proximity and guidance were exceptional. Truly a spiritually fulfilling journey, executed perfectly, without a single logistical worry."</p>
+                        <p class="font-semibold text-sm text-gray-800">- Hajia Amina K., Lagos</p>
+                    </div>
+                    
+                    <!-- Testimonial 2: Ticketing Focus -->
+                    <div class="bg-secondary-gold/5 p-6 rounded-xl shadow-xl border-l-4 border-secondary-gold">
+                        <i data-lucide="quote" class="w-6 h-6 text-secondary-gold mb-3"></i>
+                        <p class="text-gray-700 italic mb-4">"I used their ticketing service for my trip. The price was the best I found, and the process was quick and professional. Highly recommend Mrs. Bilikis' team for their prompt responses!"</p>
+                        <p class="font-semibold text-sm text-gray-800">- Mr. Ken N., Port Harcourt</p>
+                    </div>
+                    
+                    <!-- Testimonial 3: Documentation Focus -->
+                    <div class="bg-primary-blue/5 p-6 rounded-xl shadow-xl border-l-4 border-primary-blue">
+                        <i data-lucide="quote" class="w-6 h-6 text-primary-blue mb-3"></i>
+                        <p class="text-gray-700 italic mb-4">"Their team in Abuja was incredibly helpful with my family's visa documentation for Saudi Arabia. It was fast, clear, and saved us so much stress. Thank you, IBN AMEEN!"</p>
+                        <p class="font-semibold text-sm text-gray-800">- Dr. Tunde I., Abuja</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership and Team Section -->
+        <section id="leadership" class="py-16 sm:py-24 bg-light-bg subtle-texture">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-gray-900">Meet Our Experienced Leadership</h2>
+                
+                <!-- Lead Leadership Profiles - 3-column grid for balanced 3x2 layout for 6 directors -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
+                    
+                    <!-- 1. CEO/MD Card (Expanded Description) -->
+                    <div class="bg-white p-6 rounded-xl shadow-2xl text-center border-b-8 border-primary-blue">
+                        <!-- CEO image URL previously provided and retained -->
+                        <img src="https://raw.githubusercontent.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/refs/heads/main/CEO%20PICTURE2.jfif" 
+                             alt="Alhaji Rasheed Abolaji Ameen, CEO" 
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-secondary-gold shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/128x128/cccccc/333333?text=CEO+Photo';" 
+                             loading="lazy">
+                            
+                        <h3 class="text-xl font-bold text-gray-900">Alhaji Rasheed Abolaji Ameen (ARABA 1)</h3>
+                        <p class="text-md font-medium text-primary-blue mb-3">CEO & Managing Director</p>
+                        <p class="text-xs text-gray-700">
+                            A visionary leader, respected certified tour consultant, and the founder of IBN AMEEN. With over 25 years of operational experience, he drives the company's commitment to excellence in Hajj/Umrah services, emphasizing integrity, spiritual guidance, and seamless global travel logistics.
+                        </p>
+                    </div>
+                    
+                    <!-- 2. Director Card: Hajia Bunmi Olufunmilayo Ameen (Administration) -->
+                    <div class="bg-white p-6 rounded-xl shadow-2xl text-center border-b-8 border-secondary-gold">
+                        <!-- UPDATED IMAGE SRC HERE with the provided URL -->
+                        <img src="https://raw.githubusercontent.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/refs/heads/main/OLUFUNMILAYO%20AMEEN.png" 
+                             alt="Hajia Bunmi Olufunmilayo Ameen, Director" 
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-primary-blue shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/128x128/a8c2f0/333333?text=Director+Photo';" 
+                             loading="lazy">
+
+                            
+                        <h3 class="text-xl font-bold text-gray-900">Hajia Bunmi Olufunmilayo Ameen</h3>
+                        <p class="text-md font-medium text-secondary-gold mb-3">Director, Administration & Welfare</p>
+                        <p class="text-xs text-gray-700">
+                            Oversees daily administrative operations, staff welfare, and ensures a supportive and efficient working environment across all branches.
+                        </p>
+                    </div>
+
+                    <!-- 3. Director Card: Rasheedat Oluwapelumi Ameen (Finance & Compliance) -->
+                    <div class="bg-white p-6 rounded-xl shadow-2xl text-center border-b-8 border-primary-blue">
+                        <!-- Image SRC retained from previous update -->
+                        <img src="https://github.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/blob/main/Rasheedah%20Ameen%20Oluwapelumi%20pic.JPG?raw=true" 
+                             alt="Rasheedat Oluwapelumi Ameen, Director" 
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-secondary-gold shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/128x128/cccccc/333333?text=Director+Photo';" 
+                             loading="lazy">
+                             
+                        <h3 class="text-xl font-bold text-gray-900">Rasheedat Oluwapelumi Ameen</h3>
+                        <p class="text-md font-medium text-primary-blue mb-3">Director, Finance & Compliance</p>
+                        <p class="text-xs text-gray-700">
+                            Ensures financial stability, manages regulatory compliance, and oversees the fiduciary responsibilities of the company.
+                        </p>
+                    </div>
+                    
+                    <!-- 4. Director Card: Mr. Mohammad Faiz Tobiloba Ameen (Travel & Partnerships) -->
+                    <div class="bg-white p-6 rounded-xl shadow-2xl text-center border-b-8 border-secondary-gold">
+                        <!-- Image SRC for Faiz Tobiloba Ameen -->
+                        <img src="https://raw.githubusercontent.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/refs/heads/main/FAIZ%20TOBiloba%20ameen%20picture.jfif"
+                             alt="Mohammad Faiz Tobiloba Ameen, Director"
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-primary-blue shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/128x128/999999/ffffff?text=Director+Photo';"
+                             loading="lazy">
+                            
+                        <h3 class="text-xl font-bold text-gray-900">Mr. Mohammad Faiz Tobiloba Ameen</h3>
+                        <p class="text-md font-medium text-secondary-gold mb-3">Director, Travel & Partnerships</p>
+                        <p class="text-xs text-gray-700">
+                            Key driver in developing global travel partnerships and securing exclusive travel deals for clients.
+                        </p>
+                    </div>
+                    
+                    <!-- 5. Director Card: Al-Ameen Ayodele Ameen (Business Development) -->
+                    <div class="bg-white p-6 rounded-xl shadow-2xl text-center border-b-8 border-primary-blue">
+                        <!-- Image SRC for Al-Ameen Ayodele Ameen -->
+                        <img src="https://raw.githubusercontent.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/refs/heads/main/AL-AMEEN%20AYODELE.jfif" 
+                             alt="Al-Ameen Ayodele Ameen, Director" 
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-secondary-gold shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/128x128/a8c2f0/333333?text=Director+Photo';" 
+                             loading="lazy">
+                             
+                        <h3 class="text-xl font-bold text-gray-900">Al-Ameen Ayodele Ameen</h3>
+                        <p class="text-md font-medium text-primary-blue mb-3">Director, Business Development</p>
+                        <p class="text-xs text-gray-700">
+                            Drives business growth, identifies new market opportunities, and manages key partnerships to expand global reach.
+                        </p>
+                    </div>
+
+                    <!-- 6. Director Card: Abdur-rasheed Bolaji Junior Ameen (Strategic Initiatives) -->
+                    <div class="bg-white p-6 rounded-xl shadow-2xl text-center border-b-8 border-secondary-gold">
+                        <!-- Image SRC for Abdur-rasheed Bolaji Junior Ameen -->
+                        <img src="https://raw.githubusercontent.com/MMB-LINK/IbnAmeenParadiseTravelsandToursNigeriaLimited/refs/heads/main/ABDUR-RASHEED%20BOLAJI%20JUNIOR%20AMEEN%20PIC.jfif" 
+                             alt="Abdur-rasheed Bolaji Junior Ameen, Director" 
+                             class="w-32 h-32 mx-auto rounded-full object-cover mb-4 border-4 border-primary-blue shadow-lg"
+                             onerror="this.onerror=null; this.src='https://placehold.co/128x128/cccccc/333333?text=Director+Photo';" 
+                             loading="lazy">
+                            
+                        <h3 class="text-xl font-bold text-gray-900">Abdur-rasheed Bolaji Junior Ameen</h3>
+                        <p class="text-md font-medium text-secondary-gold mb-3">Director, Strategic Initiatives</p>
+                        <p class="text-xs text-gray-700">
+                            Focuses on modernizing company strategies, digital transformation, and enhancing client relationship management.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Managers Grid -->
+                <h3 class="text-2xl font-bold text-center mb-8 text-primary-blue">Key Management Team</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Manager 1: Operations -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <p class="text-sm text-gray-500 font-medium">Operation Manager</p>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Mr. Muhammad Adebara</h4>
+                        <p class="text-sm text-gray-600 mb-2">
+                            Responsible for overseeing the entire service delivery chain, ensuring high efficiency, quality control, and seamless execution of all travel packages, especially Hajj/Umrah logistics.
+                        </p>
+                        <p class="text-sm text-gray-600">Fluent in: Hausa, Arabic, Yoruba, and English.</p>
+                    </div>
+
+                    <!-- Manager 2: Lagos -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <p class="text-sm text-gray-500 font-medium">Lagos Manager</p>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Mr. Abdulgafar</h4>
+                        <p class="text-sm text-gray-600">Focus: Local Operations and Client Support in Lagos.</p>
+                    </div>
+                    
+                    <!-- Manager 3: Kano/Global -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <p class="text-sm text-gray-500 font-medium">Kano & Global Manager</p>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Mr. Ali Abdulrazaq</h4>
+                        <p class="text-sm text-gray-600">Fluent in: Hausa. Manages key Northern and international accounts.</p>
+                    </div>
+                    
+                    <!-- Ticketing Manager -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <p class="text-sm text-gray-500 font-medium">Ticketing Manager</p>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Mrs. Bilikis Begore</h4>
+                        <p class="text-sm text-gray-600">Manages all local and international flight logistics.</p>
+                    </div>
+                    
+                    <!-- Logistics Manager -->
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+                        <p class="text-sm text-gray-500 font-medium">Logistics Manager (Lagos)</p>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Ajibola Taiwo</h4>
+                        <p class="text-sm text-gray-600">Oversees smooth ground and travel logistics.</p>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact and Locations Section -->
+        <section id="contact" class="py-16 sm:py-24 bg-primary-blue text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-secondary-gold">Visit Our Offices Nationwide</h2>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Location Card 1: Head Office (Lagos) -->
+                    <div class="bg-white/10 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-secondary-gold mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">Head Office - Lagos</h3>
+                        <p class="text-sm">No. 223, Ikorodu Road, First Floor, Ilupeju, (Beside Fidson Pharmacy), Lagos.</p>
+                        <p class="mt-2 font-semibold">Staff: 11</p>
+                    </div>
+
+                    <!-- Location Card 2: Abuja -->
+                    <div class="bg-white/10 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-white mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">Abuja Branch</h3>
+                        <p class="text-sm">DBM Plaza, Zone 1, Abuja.</p>
+                        <p class="mt-2 font-semibold">Staff: Dedicated Team</p>
+                    </div>
+                    
+                    <!-- Location Card 3: Port Harcourt -->
+                    <div class="bg-white/10 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-white mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">Port Harcourt Branch</h3>
+                        <p class="text-sm">No. 2 Edaohor Close, Off Umukalagbo Road, Elekaya, Rivers State.</p>
+                        <p class="mt-2 font-semibold">Staff: 3</p>
+                    </div>
+
+                    <!-- Location Card 4: Ilorin -->
+                    <div class="bg-white/10 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-white mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">Ilorin Branch</h3>
+                        <p class="text-sm">No. 70 Oniwasi Agbaye Street, Adewole Area, Ilorin.</p>
+                        <p class="mt-2 font-semibold">Staff: 3</p>
+                    </div>
+                    
+                </div>
+                
+                <p class="text-center mt-12 text-lg font-light">
+                    New branches recently opened in Kano (4 staff) and Zaria (Dedicated Representative).
+                </p>
+                
+                <!-- Direct CEO WhatsApp Enquiry -->
+                <div class="max-w-xl mx-auto mt-16 p-8 bg-white text-gray-800 rounded-xl shadow-2xl border-b-4 border-secondary-gold text-center">
+                    <i data-lucide="message-square-text" class="w-10 h-10 text-primary-blue mx-auto mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-3">Direct CEO Enquiry Line (WhatsApp)</h3>
+                    <p class="mb-4 text-gray-600">
+                        For immediate high-level consultation, general enquiries, or specialized travel needs, you may contact the CEO directly on WhatsApp.
+                    </p>
+                    <div class="space-y-3 sm:flex sm:space-y-0 sm:space-x-4 justify-center">
+                        <!-- Number 1: 08083152070 -> 2348083152070 -->
+                        <a href="https://wa.me/2348083152070" target="_blank" class="block w-full sm:w-auto px-6 py-3 bg-secondary-gold text-white font-semibold rounded-lg shadow-md hover:bg-yellow-600 transition duration-300">
+                            <i data-lucide="phone-call" class="w-4 h-4 inline mr-2"></i> Click to Message Us on WhatsApp
+                        </a>
+                        <!-- Number 2: 08035872156 -> 2348035872156 -->
+                        <a href="https://wa.me/2348035872156" target="_blank" class="block w-full sm:w-auto px-6 py-3 bg-primary-blue text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
+                            <i data-lucide="phone-call" class="w-4 h-4 inline mr-2"></i> Click to Message Us on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <!-- END Direct CEO WhatsApp Enquiry -->
+                
+                <p class="text-center mt-6 text-secondary-gold text-2xl font-bold italic">
+                    "A trial will surely convince you."
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-2 text-lg font-semibold">IBN AMEEN PARADISE TRAVELS AND TOURS NIGERIA LIMITED</p>
+            <p class="text-sm text-gray-400">&copy; 2025 All Rights Reserved. Member of IATA & NATOP.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle, Lucide Icons, and Carousel -->
+    <script>
+        // Initialize Lucide Icons
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            startCarousel(); // Start the carousel on load
+        });
+
+        // Mobile Menu Toggle
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuButton.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'menu');
+            } else {
+                icon.setAttribute('data-lucide', 'x');
+            }
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons(); // Re-render icons after change
+            }
+        });
+
+        // Hide mobile menu after clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuButton.querySelector('i').setAttribute('data-lucide', 'menu');
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons(); // Re-render icons after change
+                }
+            });
+        });
+        
+        // --- CAROUSEL LOGIC ---
+        function startCarousel() {
+            const carousel = document.getElementById('hero-carousel');
+            if (!carousel) return;
+            
+            const container = carousel.querySelector('.carousel-container');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const dotsContainer = document.getElementById('carousel-dots');
+            let currentIndex = 0;
+            const totalItems = items.length;
+            const intervalTime = 5000; // 5 seconds
+
+            // 1. Create Navigation Dots
+            items.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('w-3', 'h-3', 'rounded-full', 'bg-white', 'opacity-50', 'transition', 'duration-300');
+                dot.addEventListener('click', () => moveToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = dotsContainer.querySelectorAll('button');
+
+            // 2. Function to move to a specific slide
+            const moveToSlide = (index) => {
+                if (index >= totalItems) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = totalItems - 1;
+                } else {
+                    currentIndex = index;
+                }
+                
+                // Update container position
+                container.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    dot.classList.remove('opacity-100', 'bg-secondary-gold');
+                    dot.classList.add('opacity-50', 'bg-white');
+                    if (i === currentIndex) {
+                        dot.classList.add('opacity-100', 'bg-secondary-gold');
+                    }
+                });
+            };
+
+            // Initialize position and first dot
+            moveToSlide(0);
+
+            // 3. Auto-play functionality
+            let autoPlayInterval = setInterval(() => {
+                moveToSlide(currentIndex + 1);
+            }, intervalTime);
+
+            // Stop auto-play on hover (better UX)
+            carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            carousel.addEventListener('mouseleave', () => {
+                autoPlayInterval = setInterval(() => {
+                    moveToSlide(currentIndex + 1);
+                }, intervalTime);
+            });
+        }
+    </script>
+</body>
+</html>
